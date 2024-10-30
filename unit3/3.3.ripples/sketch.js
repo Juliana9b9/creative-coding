@@ -9,10 +9,12 @@ class Rippler{
     this.x = x,
     this.y = y, 
     this.d = 0
+    this.o = 225
   }
 
   draw(){
     this.d += 1;
+    this.o -= 2; 
     circle(this.x, this.y, this.d);
   }
 }
@@ -24,12 +26,16 @@ function setup() {
 function draw() {
   //Set background color to blue
   background(0,150,225);
-  stroke(225,225,225,55);
+  stroke(225,225,225,this.o);
   strokeWeight(2); //stroke weight of the ripples 
   noFill();
 
   for (let i = 0; i < ripplers.length; i++){
     ripplers[i].draw();
+    if (ripplers[i].o <= 0) {
+      ripplers.splice(i, 1);
+      i--;
+    }
   }
 
   // ripple_d += 1; 
