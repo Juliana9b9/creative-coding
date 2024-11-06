@@ -9,12 +9,10 @@ class Rippler{
     this.x = x,
     this.y = y, 
     this.d = 0
-    this.o = 225
   }
 
   draw(){
     this.d += 1;
-    this.o -= 2; 
     circle(this.x, this.y, this.d);
   }
 }
@@ -32,10 +30,6 @@ function draw() {
 
   for (let i = 0; i < ripplers.length; i++){
     ripplers[i].draw();
-    if (ripplers[i].o <= 0) {
-      ripplers.splice(i, 1);
-      i--;
-    }
   }
 
   // ripple_d += 1; 
