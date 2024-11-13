@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--
+
+This is my remix version of Through the Park by Nick Montfort original link: https://nickm.com/poems/through_the_park.html
+Copyright (c) 2024, 2019 Nick Montfort <nickm@nickm.com>
+
+  It follows a story that is mixed with elements from Alice in Wonderland 
+  and Little Red Riding Hood. I thought it'd be interesting to use random sentences 
+  from each story to see how this would end, either in wonderland or in the forest. 
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+-->
+<!--
+lines 26 - 36 customize the background of the website and the font of the text. 
+--> 
+<style>
+/* <![CDATA[ */
+body {
+ background: rgb(106, 90, 205);
+ color: #000;
+ margin: 20pt 10pt 0 28pt;
+ font-family: "Times New Roman", Times, serif;
+ font-size: 15pt;
+}
+div {
+ height: 10pt;
+}
+a {
+ color: #250;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script>
+  //Lines 45-69 are the sentences that are randomized in each refresh of the page
+  //They are pulled from this list. 
+var sentences=[
+"The girl tilts her head and eats the cake",
+"The girl shrinks to the size of an ant",
+"The girl sets off through the woods",
+"A wolf watches from the distance",
+"The girl turns to see a cake on the ground",
+"The lanky wolf sniffs the girls steps",
+"A tunnel spirals into the ground",
+"A cat floats closley behind",
+"A wolf gets ready, dress pulling on its fur",
+"A bush of roses reminds the girl of her grandmother",
+"The girl and the cat converse with each other",
+"The wolf stands over the girl",
+"Screams echo through the woods",
+"A cry wails through the tress",
+"The girl's breathing quickens",
+"The cat squints its eyes",
+"Her tears made a lake",
+"The cat disappears",
+"She runs",
+"She jumps in the lake",
+"Things are left unturned",
+"The girl opens the door",
+"A rabbit dashes away in a hurry",
+"Her grandmothers cottage is brown",
+"The door creaks open"
+];
+// Line 72, play around with the numbers to see how many sentences get added or taken out. 
+var to_drop = 1 * sentences.length / 2;
+var n = 0;
+var text = ""
+function rand_range(max) {
+ return Math.floor(Math.random()*(max+1));
+}
+function drop(array) {
+ var to_remove = rand_range(array.length-1);
+ while (array[to_remove].length == 0) {
+  to_remove = rand_range(array.length-1);
+ }
+ array[to_remove] = '';
+ return array;
+}
+function story() {
+ var main=document.getElementById('main');
+ for (n=0; n<to_drop; n++) {
+  sentences = drop(sentences);
+ }
+ for (n=0; n<sentences.length; n++) {
+  if (sentences[n].length > 0) {
+   text += sentences[n] + ". ... "
+   }
+  }
+ last=document.createElement('div');
+ last.appendChild(document.createTextNode(text));
+ main.appendChild(last);
+}
+// Here is where you can change the title, and the text box on the side of the page.   
+</script>
+  <title>Through the Park</title>
+</head>
+<body onload="story();">
+<div style="float:right; color:rgb(214, 202, 26); width:200px; font-style:italic">
+<p>A girl who takes a tumble, a girl and a cat, a girl and a wolf... What will you read today?<a href="through_the_park.html">Reload</a> 
+</div>
+<div style="height:70pt; font-size:26pt">Through the Woods</div>
+<div id="main" style="font-weight:normal; width:50%"></div>
+</body>
+</html>
