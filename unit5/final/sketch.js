@@ -1,4 +1,4 @@
-//Juliana Pacheco’s Artists Statement: In the index file :) 
+//Juliana Pacheco’s Artists Statement: In the index file. 
 
 
 function setup() {
