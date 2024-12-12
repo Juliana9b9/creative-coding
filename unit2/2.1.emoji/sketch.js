@@ -1,43 +1,54 @@
 function setup() {
   // create a canvas
-  createCanvas(400, 400);
+  createCanvas(800, 800);
 
   // disable animation
   noLoop();
-  //This is my design on the straight faced emoji, which is always in my recently used emojis
+  //This a cumulative of different emojis. The Crystal ball emoji, the eye emoji, and a lollipop
 }
 
 function draw() {
   background(220);
-stroke("gold"); // set the stroke (line) color 
-  strokeWeight(6); // set the stroke thickness
-  fill("yellow"); // set the fill color
+  
+  //The crystal ball stand
+  stroke("#4f0501");
+  strokeWeight(6);
+  fill("brown");
+  square(140, 300, 130);
 
-  // draw an ellipse with 250 pixel diameter
-  // with its center at x position 200
-  // and at y position 200
-  ellipse(200,200,250,250); 
-  
-  // The left eye 
-  fill("#000000"); // changed color to black 
-  stroke("#000000");
-  strokeWeight(1);
-  rect(150,120,20,50); // X=150 moved the rect right, Y=120 moved the rect down, w= width of the rect, h= height of the rect 
-  
-  // The right eye
-  fill("#000000");
-  stroke("#000000");
-  strokeWeight(1);
-  rect(220,120,20,50);// X=220 moved the rect right next to the left eye , Y=120 moved the rect down, w= width of the rect, h= height of the rect 
-  
-  
-  // The mouth
-  fill("#000000");
-  stroke("#000000");
-  strokeWeight(1);
-  rect(155,220,90,15); //X=155 moved the rect right to make it somewhat centered below the eyes , Y=220 moved the rect down, w= width of the rect increased to make it long, h= height of the rect decreased to make a straight line. 
-  
-  rectMode(CENTER)
- 
+//The crystal ball
+  stroke("#dca9f9"); 
+  strokeWeight(6); 
+  fill("#b959f0"); 
+  ellipse(200,240,250,250); 
+
+  stroke("#4f0501");
+  strokeWeight(6);
+  fill("brown");
+
+//eyeball emoji
+//eye shape
+  stroke("black");
+  strokeWeight(6);
+  fill("white");
+  ellipse(540, 100, 200, 150);
+
+//pupil
+  stroke("#1e8a03");
+  strokeWeight(6);
+  fill("green");
+  circle(540, 100, 100);
+
+//lollipop stick
+  stroke("gray");
+  strokeWeight(6);
+  fill("white");
+  rect(400, 500, 25, 250);
+
+//lollipop
+  stroke("#c9051f");
+  strokeWeight(6);
+  fill("red");
+  circle(415,460, 100, 100)
  
 }
