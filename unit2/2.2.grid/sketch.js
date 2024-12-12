@@ -19,8 +19,4 @@ function draw() {
       strokeWeight(random(1,15));// Changes the thickness of the outline of the shape. In this case, 1 is pretty thin and 15 is as thick as it can get. 
       translate(x * 200, y * 200);// Change the spacing of the shapes to fill out the whole page. 
       triangle(50, 120, 200, 100, 150, 150);//size of the shape. 
-      pop();
-    }
-  }
-}
-
+      pop
