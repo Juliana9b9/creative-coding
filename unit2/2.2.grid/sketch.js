@@ -1,6 +1,6 @@
 function setup() {
   // create a canvas
-  createCanvas(1200, 1200);
+  createCanvas(1800, 1800);
 
   // disable animation
   noLoop();
@@ -17,8 +17,8 @@ function draw() {
       fill(random(colors)); //will choose a random color from the list to fill the shape.
       stroke(random(colors));// will choose a random color to outline the shape.
       strokeWeight(random(1,15));// Changes the thickness of the outline of the shape. In this case, 1 is pretty thin and 15 is as thick as it can get. 
-      translate(x * 145, y * 145);// Change the spacing of the shapes to fill out the whole page. 
-      ellipse(0,0,100,100);//size of the shape. 
+      translate(x * 200, y * 200);// Change the spacing of the shapes to fill out the whole page. 
+      triangle(50, 120, 200, 100, 150, 150);//size of the shape. 
       pop();
     }
   }
